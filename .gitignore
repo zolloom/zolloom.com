@@ -2,3 +2,13 @@ node_modules/
 test-results/
 playwright-report/
 .DS_Store
+
+# sops: plaintext copies the VS Code sops extension leaves next to the encrypted file while it is open
+.decrypted~*
+**/.decrypted~*
+# local plaintext env files
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
