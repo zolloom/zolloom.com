@@ -23,7 +23,9 @@ Secrets are stored encrypted in `secrets/` with [sops](https://github.com/getsop
    | Zone | Workers Routes | Edit | attach `zolloom.com` to the Worker |
    | Zone | DNS | Edit | swap the apex record from the old server to the Worker (the mail records stay untouched) |
    | Zone | Zone Settings | Edit | Always Use HTTPS, HSTS, minimum TLS 1.2 |
-   | Zone | Single Redirect | Edit | `www.zolloom.com` → `zolloom.com` (301) |
+   | Zone | Single Redirect, or **Dynamic URL Redirects** (same permission under its other name) | Edit | `www.zolloom.com` → `zolloom.com` (301) |
+
+   Not "Bulk URL Redirects" or "Mass URL Redirects": those are for account-level bulk redirect lists.
 
 4. **Zone Resources**: Include → Specific zone → `zolloom.com`.
 5. **Client IP Address Filtering**: leave empty (GitHub Actions runners have changing IPs).
