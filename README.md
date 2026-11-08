@@ -44,7 +44,7 @@ npm run check        # all of the above
 
 ## Deploying
 
-Production is an assets-only Cloudflare Worker (`wrangler.jsonc`) serving `src/` on the route `zolloom.com/*`. Pushes to `master` deploy automatically after the checks pass (`.github/workflows/ci.yml`). From the agent VM:
+Production is an assets-only Cloudflare Worker (`wrangler.jsonc`) serving `src/` on the route `zolloom.com/*`. Deploys are manual, on purpose: CI only runs the checks and never deploys. Deploy from the agent VM after the checks pass:
 
 ```sh
 sops exec-env secrets/cloudflare.sops.yaml 'npm run deploy'

@@ -28,7 +28,7 @@ Secrets are stored encrypted in `secrets/` with [sops](https://github.com/getsop
    Not "Bulk URL Redirects" or "Mass URL Redirects": those are for account-level bulk redirect lists.
 
 4. **Zone Resources**: Include → Specific zone → `zolloom.com`.
-5. **Client IP Address Filtering**: leave empty (GitHub Actions runners have changing IPs).
+5. **Client IP Address Filtering**: leave empty (the agent VM sits behind NAT, its public IP can change).
 6. **TTL**: one year is a sensible expiry. Put a reminder in your calendar to rotate it.
 7. **Continue to summary** → **Create Token**. Copy the token (it starts with `cfat_`). It is shown only once.
 
@@ -42,17 +42,8 @@ sops secrets/cloudflare.sops.yaml   # replace both REPLACE_ME values, save, clos
 git commit -am "Fill Cloudflare secrets" && git push
 ```
 
-### GitHub Actions secrets (repo owner only)
-
-Collaborators can't set Actions secrets, so the repo owner runs this once (needs `gh` logged in as the owner). The values go straight from sops to GitHub, without passing through the terminal or shell history:
-
-```sh
-sops -d --extract '["CLOUDFLARE_API_TOKEN"]' secrets/cloudflare.sops.yaml | gh secret set CLOUDFLARE_API_TOKEN -R zolloom/zolloom.com
-sops -d --extract '["CLOUDFLARE_ACCOUNT_ID"]' secrets/cloudflare.sops.yaml | gh secret set CLOUDFLARE_ACCOUNT_ID -R zolloom/zolloom.com
-```
-
-Without `gh`: GitHub → repo **Settings** → **Secrets and variables** → **Actions** → **New repository secret**, once for each of the two names above.
+Deploys run by hand from the agent VM (see README, Deploying), so GitHub Actions needs no Cloudflare secrets.
 
 ### Rotating
 
-Create a new token with the same permissions, put it in the sops file, run the first `gh secret set` command again, then delete the old token in Cloudflare.
+Create a new token with the same permissions, put it in the sops file with `sops`, then delete the old token in Cloudflare.
