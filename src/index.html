@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-mode="designer">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>UI/UX designer • Zoltan Elek</title>
+    <meta name="description" content="Zoltan Elek, aka zolloom: UI/UX and graphic designer and front-end developer with more than 20 years of web and graphic work. Get in touch.">
+    <meta name="author" content="Zoltan Elek">
+    <meta name="theme-color" content="#00a8ec">
+    <meta name="color-scheme" content="light">
+    <link rel="canonical" href="https://zolloom.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zolloom.com/">
+    <meta property="og:title" content="Zoltan Elek · zolloom">
+    <meta property="og:description" content="UI/UX designer / front-end coder. 20+ years of web and graphic work.">
+    <meta property="og:image" content="https://zolloom.com/assets/img/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preload" href="/assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Set the mode before first paint so #coder links don't flash the designer face. -->
+    <script>
+      document.documentElement.classList.add('js');
+      if (location.hash.toLowerCase() === '#coder') document.documentElement.dataset.mode = 'coder';
+    </script>
+    <script type="module" src="/assets/js/main.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zoltan Elek",
+        "alternateName": "zolloom",
+        "jobTitle": "UI/UX designer and front-end developer",
+        "url": "https://zolloom.com/",
+        "sameAs": ["https://www.facebook.com/zolloom"]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#contact">Skip to contact</a>
+    <canvas class="backdrop" data-backdrop aria-hidden="true"></canvas>
+
+    <div class="page">
+      <header class="top">
+        <a class="brand" href="/" aria-label="zolloom home">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__name" aria-hidden="true"><span data-show="designer">zolloom</span><span data-show="coder">~/zolloom</span></span>
+        </a>
+
+        <div class="switch" role="group" aria-label="View as">
+          <button type="button" class="switch__opt switch__opt--designer" data-mode-set="designer" aria-pressed="true">designer</button>
+          <button type="button" class="switch__opt switch__opt--coder" data-mode-set="coder" aria-pressed="false">&lt;coder&gt;</button>
+          <span class="switch__thumb" aria-hidden="true"></span>
+        </div>
+      </header>
+
+      <main class="hero">
+        <div class="art" data-square aria-hidden="true">
+          <div class="art__frame">
+            <span class="art__name" data-show="designer">square</span>
+            <span class="art__handle art__handle--tl"></span>
+            <span class="art__handle art__handle--tr"></span>
+            <span class="art__handle art__handle--bl"></span>
+            <span class="art__handle art__handle--br"></span>
+            <span class="art__size" data-show="designer" data-square-size>320 × 320</span>
+            <span class="art__inspect" data-show="coder"><b>div</b>.square <i data-square-size>320 × 320</i></span>
+          </div>
+          <div class="sq" data-square-grid></div>
+        </div>
+
+        <div class="copy">
+          <p class="eyebrow">
+            <span>Zoltan Elek</span><span class="eyebrow__sep" aria-hidden="true">/</span><span>zolloom</span>
+          </p>
+
+          <h1 class="title">
+            <span data-show="designer">Designing <em>beautiful</em> &amp; functional user experiences.</span>
+            <span data-show="coder" data-scramble>Writing <em>clean</em>, elegant &amp; efficient code.</span>
+          </h1>
+
+          <p class="lede">
+            <span data-show="designer">UI/UX and graphic designer. For more than 20 years I’ve been shaping interfaces, identities and the small details that make them feel right.</span>
+            <span data-show="coder" data-scramble>Front-end developer. I turn those designs into fast, accessible, pixel-faithful interfaces, built on clean and maintainable code.</span>
+          </p>
+
+          <section class="contact" id="contact" aria-labelledby="contact-title">
+            <h2 class="contact__title" id="contact-title">
+              <span data-show="designer">Get in touch</span><span data-show="coder">// get in touch</span>
+            </h2>
+
+            <div class="contact__designer" data-show="designer">
+              <a class="mail" data-email href="#contact">
+                <span data-email-text>hello [at] zolloom.com</span>
+                <svg class="mail__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+              </a>
+              <div class="contact__row">
+                <button type="button" class="chip" data-copy-email data-copied="Copied" data-failed="Copy failed">
+                  <svg class="chip__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" /><path d="M16 8V4H4v12h4" /></svg>
+                  <span data-copy-label>Copy e-mail</span>
+                </button>
+                <a class="chip" href="https://www.facebook.com/zolloom" target="_blank" rel="me noopener">
+                  Facebook
+                  <svg class="chip__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="code" data-show="coder">
+              <pre class="code__pre"><code><span class="line"><span class="t-kw">const</span> <span class="t-var">zolloom</span> <span class="t-pun">=</span> <span class="t-pun">{</span></span>
+<span class="line">  <span class="t-key">name</span><span class="t-pun">:</span> <span class="t-str">"Zoltan Elek"</span><span class="t-pun">,</span></span>
+<span class="line">  <span class="t-key">roles</span><span class="t-pun">:</span> <span class="t-pun">[</span><span class="t-str">"designer"</span><span class="t-pun">,</span> <span class="t-str">"coder"</span><span class="t-pun">],</span></span>
+<span class="line">  <span class="t-key">experience</span><span class="t-pun">:</span> <span class="t-str">"20+ years"</span><span class="t-pun">,</span></span>
+<span class="line">  <span class="t-key">email</span><span class="t-pun">:</span> <a class="t-str t-link" data-email href="#contact"><span data-email-text="quoted">"hello [at] zolloom.com"</span></a><span class="t-pun">,</span></span>
+<span class="line">  <span class="t-key">facebook</span><span class="t-pun">:</span> <a class="t-str t-link" href="https://www.facebook.com/zolloom" target="_blank" rel="me noopener">"fb.com/zolloom"</a><span class="t-pun">,</span></span>
+<span class="line"><span class="t-pun">};</span></span>
+<span class="line"><span class="t-com">// let’s build something</span><span class="caret" aria-hidden="true"></span></span></code></pre>
+              <button type="button" class="code__copy" data-copy-email data-copied="✓ copied" data-failed="✗ copy failed">
+                <span class="code__prompt" aria-hidden="true">$</span> <span data-copy-label>copy email</span>
+              </button>
+            </div>
+
+            <p class="sr-only" aria-live="polite" data-copy-status></p>
+          </section>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© <span data-year>2026</span> Zoltan Elek</p>
+        <p class="foot__coords" aria-hidden="true">x <span data-x>0000</span> y <span data-y>0000</span></p>
+        <p class="foot__hint">Press <kbd>/</kbd> to switch</p>
+      </footer>
+    </div>
+
+    <canvas class="wipe" data-wipe aria-hidden="true" hidden></canvas>
+  </body>
+</html>

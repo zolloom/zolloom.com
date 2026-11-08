@@ -1,0 +1,36 @@
+{
+  "name": "zolloom.com",
+  "version": "2.0.0",
+  "private": true,
+  "description": "zolloom.com: contact page of Zoltan Elek, designer / <coder>",
+  "type": "module",
+  "scripts": {
+    "fonts": "node scripts/copy-fonts.js",
+    "assets": "node scripts/render-assets.js",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "node node_modules/eslint/bin/eslint.js .",
+    "lint:css": "node node_modules/stylelint/bin/stylelint.mjs \"src/**/*.css\"",
+    "lint:html": "node node_modules/html-validate/bin/html-validate.mjs src",
+    "test": "node node_modules/vitest/vitest.mjs run",
+    "test:e2e": "node node_modules/@playwright/test/cli.js test",
+    "serve": "node scripts/serve.js",
+    "check": "npm run lint && npm test && npm run test:e2e"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@playwright/test": "^1.65.0",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "html-validate": "^11.19.0",
+    "jsdom": "^31.0.0",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard": "^41.0.0",
+    "vitest": "^5.1.0"
+  }
+}
