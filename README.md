@@ -44,4 +44,14 @@ npm run check        # all of the above
 
 ## Deploying
 
-Upload the contents of `src/` to any static host. The address `hello@zolloom.com` is built at runtime, so it never appears in the HTML. Without JavaScript the page shows `hello [at] zolloom.com` and the plain hollow square.
+Production is an assets-only Cloudflare Worker (`wrangler.jsonc`) serving `src/` on the route `zolloom.com/*`. Pushes to `master` deploy automatically after the checks pass (`.github/workflows/ci.yml`). From the agent VM:
+
+```sh
+sops exec-env secrets/cloudflare.sops.yaml 'npm run deploy'
+sops exec-env secrets/cloudflare.sops.yaml 'npm run zone -- --check'   # preview zone changes
+sops exec-env secrets/cloudflare.sops.yaml 'npm run zone'              # HTTPS, HSTS, TLS 1.2, www -> apex
+```
+
+It is a route, not a custom domain, on purpose: the apex A record still points at the old host, because mail (MX, SPF `+a +mx`), `mail.`, `ftp.` and the CalDAV/CardDAV SRV records depend on it. The route only takes over web traffic for `zolloom.com`. Security headers are in `src/_headers`. Tokens and secrets: see `SECRETS.md`.
+
+The address `hello@zolloom.com` is built at runtime, so it never appears in the HTML. Without JavaScript the page shows `hello [at] zolloom.com` and the plain hollow square.

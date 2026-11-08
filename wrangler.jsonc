@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Assets-only Worker: no script runs, src/ is served as is.
+  "name": "zolloom-com",
+  "compatibility_date": "2026-11-08",
+  "assets": {
+    "directory": "./src"
+  },
+  "workers_dev": false,
+  "preview_urls": false,
+  // A route, not a custom domain: the apex A record must keep pointing at the old
+  // host, because MX, SPF (+a +mx), mail./ftp. and the CalDAV SRV records depend on it.
+  // The route only takes over HTTP(S) for zolloom.com; www is redirected by a zone rule.
+  "routes": [{ "pattern": "zolloom.com/*", "zone_name": "zolloom.com" }],
+  "observability": { "enabled": false }
+}

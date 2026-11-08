@@ -14,7 +14,9 @@
     "test": "node node_modules/vitest/vitest.mjs run",
     "test:e2e": "node node_modules/@playwright/test/cli.js test",
     "serve": "node scripts/serve.js",
-    "check": "npm run lint && npm test && npm run test:e2e"
+    "check": "npm run lint && npm test && npm run test:e2e",
+    "deploy": "node node_modules/wrangler/bin/wrangler.js deploy",
+    "zone": "node scripts/cloudflare-zone.js"
   },
   "engines": {
     "node": ">=20"
@@ -31,6 +33,7 @@
     "jsdom": "^31.0.0",
     "stylelint": "^18.0.0",
     "stylelint-config-standard": "^41.0.0",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.0",
+    "wrangler": "4.158.0"
   }
 }
