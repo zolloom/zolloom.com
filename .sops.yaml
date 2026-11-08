@@ -1,5 +1,6 @@
 creation_rules:
-  - path_regex: ^secrets/.*\.sops\.ya?ml$
+  # [/\\] accepts both / and \ so the rule also matches Windows paths (secrets\file.sops.yaml)
+  - path_regex: '(^|[/\\])secrets[/\\][^/\\]+\.sops\.ya?ml$'
     age: >-
       age1gf02amat6y4y0h2vxcshpl7mnzex430w4plaft3p56npdx8ksy9sduzw26,
       age1yucj38jd7swvmfve24y42p9p4k5nngwq9kg4emdc3hqrf7yc633sgglx6e
